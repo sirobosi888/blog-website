@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* デフォルトスタイル (ビッグスクリーン用) */
+        table {
+            border-collapse: collapse;
+            width: 100%; /* ビッグスクリーンでは100% */
+            text-align: center;
+            margin: 10px 0;
+        }
+        td {
+            padding: 5px;
+            text-align: left;
+        }
+        img {
+            margin: 0;
+            display: block;
+            width: 200px; /* デフォルトの画像サイズ */
+            height: auto;
+        }
+        p {
+            margin: 2px 0 0;
+            font-size: 14px;
+        }
+        h1, h3 {
+            margin: 10px 0;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* ノートPC用 (画面幅が1024px以下の場合) */
+        @media (max-width: 1024px) {
+            table {
+                width: 80%; /* ノートPCでは80% */
+            }
+            img {
+                width: 150px; /* 画像サイズを縮小 */
+            }
+        }
+
+        /* スマホ用 (画面幅が768px以下の場合) */
+        @media (max-width: 768px) {
+            table {
+                width: 50%; /* スマホでは50% */
+            }
+            img {
+                width: 100px; /* さらに画像サイズを縮小 */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="home.html">HOME</a>
+        <a href="softwares.html">softwares</a>
+        <a href="hardware.html">このサイトについて</a>
+    </div>
+    <h1>here888 website</h1>
+    <h3>welcome to my website</h3>
+    <p>
+        このサイトでは電子工作、プログラミングなどついての情報を発信していきます。
+        よろしくお願いします。
+    </p>
+    <!-- 画像リンクをテーブル配列に配置 -->
+    <table border="1">
+        <tr>
+            <td>
+                <a href="blog_1.html">
+                    <img src="images/blog_1.png" alt="※">
+                    <p>ラズパイピコをキーボード&マウスにしよう</p>
+                </a>
+            </td>
+            <td>
+                <a href="blog_2.html">
+                    <img src="images/blog_2.png" alt="※">
+                    <p>まだ作成されていないようです</p>
+                </a>
+            </td>
+            <td>
+                <a href="blog_3.html">
+                    <img src="images/blog_3.png" alt="※">
+                    <p>まだ作成されていないようです</p>
+                </a>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

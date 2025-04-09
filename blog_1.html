@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>ラズパイピコをキーボード&マウスにしよう</title>
+    <style>
+        img {
+            display: block;
+            max-width: 60%; /* 親要素の幅を超えないようにする */
+            height: auto; /* 縦横比を維持して高さを自動調整 */
+        }
+    </style>
+</head>
+<body>
+    <h1>ラズパイピコをキーボード&マウスにしよう</h1>
+    <p>
+        簡単ラズパイピコ入門
+        <br>
+        セットアップが終わったらraspberry pi picoはあなたのキーボード&マウスです。スタンプ連打、ゲームの単純自動操作など自由に使ってください。
+        <br>
+        これから作り方を解説していきます。
+        <br>
+        まずは,「thonny download」と検索してthonnyのサイトに入りましょう。
+        <img src="images/b_1_1.png" alt="画像">
+        <br>
+        <img src="images/b_1_2.png" alt="画像">
+        <br>
+        そしたらこのようなサイトに飛びます。ダウンロードをクリック
+        <img src="images/b_1_3.png" alt="画像">
+        <br><br>
+        downloadをクリックしたらGitHubというサイトに飛びます。GitHubは便利なので機会があったら説明します。ちなみにこのサイトもGitHubを使用して公開しています。
+        <img src="images/b_1_4.png" alt="画像">
+        <br> <br>        
+        そしたら下のほうの<a href="https://github.com/thonny/thonny/releases/download/v4.1.7/thonny-4.1.7.exe">thonny-4.1.7.exe</a>(このURLからも可)をクリックします。
+        <img src="images/b_1_5.png" alt="画像">
+        <br><br> 
+        そして左クリックx2でインストローラーを起動します。セットアップは特に難しいことはないので、解説はしませんが、デフォルトのままでOKです。最後にPythonかraspberry pi pico用か選ぶので、raspberry piを選んでください。
+        <br><br><br>
+        そしてthonnyを起動します。起動したら、右上のインタプリタ設定をクリックすることでMicoroPython(raspberry pi pico)から通常のPythonを使うこともできます。テーマを変えたりカスタマイズできます。
+        <img src="images/b_1_6.png" alt="画像">
+        <br><br> 
+        <img src="images/b_1_7.png" alt="画像">
+        <br><br> 
+        そして右下にあるMicroPython(Raspberry Pi Pico)のところをクリックしてCircuitPythonをインストールをクリックします。あとちょっとですよ。
+        <img src="images/b_1_8.png" alt="画像">
+        <br><br> 
+        自分のraspberry pi picoに合わせて設定しましょう。
+        <img src="images/b_1_9.png" alt="画像">
+        <br> <br> 
+        <img src="images/b_1_10.png" alt="画像">
+        <br> <br>
+        そしてここにCircitPythonと書いてあったらOKです
+        <img src="images/b_1_11.png" alt="画像">
+        <br> <br>
+        できましたらファイルのCIRCUITPYのドライブを開いてこんなファイルがあったら成功です。
+        <img src="images/b_1_12.png" alt="画像">
+        <br> <br>
+        そしてキーボードやマウスとして機能させるためのライブラリという拡張機能を使います。circuitpython libraryと検索し赤で囲ってあるところをクリックしましょう。<a href="https://github.com/adafruit/Adafruit_CircuitPython_Bundle/releases/download/20250408/adafruit-circuitpython-bundle-9.x-mpy-20250408.zip">Livrary</a>（このURLからも可）
+        <img src="images/b_1_13.png" alt="画像">
+        <br> <br>
+        そしてzipファイルを解凍して,hidと検索します。するとadafruit_hidというフォルダが出てきます。これをCIRCUITPYのlibというフォルダに入れます。そしたらインストール完了です。
+        <img src="images/b_1_14.png" alt="画像">
+        <br>
+        <img src="images/b_1_15.png" alt="画像">
+        <br> <br>   
+        コードを入力して緑の実行ボタンで実行します。するとraspberry pi picoがキーボードとして認識されます。これでキーボード&マウスの完成です。
+        <img src="images/b_1_16.png" alt="画像">
+        <br> <br>
+        ソースコード
+    </p>
+        <div class="code-container">
+                <div class="code-container">
+                    <button class="copy-button" onclick="copyCode()">コピー</button>
+                    <pre id="source-code">
+                        import time
+                        import board
+                        from digitalio import DigitalInOut, Direction, Pull
+                        import usb_hid
+                        from adafruit_hid.mouse import Mouse
+                        from adafruit_hid.keyboard import Keyboard
+                        from adafruit_hid.keycode import Keycode
+                        
+                        # 初期化
+                        mouse = Mouse(usb_hid.devices)
+                        keyboard = Keyboard(usb_hid.devices)
+                        
+                        # マウスの移動を行う関数
+                        def move_mouse(dx, dy):
+                            mouse.move(x=dx, y=dy)
+                            time.sleep(0.1)
+                        
+                        # 左クリックを行う関数
+                        def left_click():
+                            mouse.click(Mouse.LEFT_BUTTON)
+                            time.sleep(0.1)
+                        
+                        # キーボード入力を行う関数
+                        def send_key(key_code):
+                            keyboard.press(key_code)
+                            time.sleep(0.1)
+                            keyboard.release_all()
+                        
+                        # 'Hello World'を入力
+                        def type_hello_world():
+                            keyboard.write("Hello World")
+                            time.sleep(2)
+                        
+                        # メインループ
+                        while True:
+                            # マウスポインターを右に移動
+                            move_mouse(10, 0)
+                            time.sleep(1)
+                        
+                            # 左クリック
+                            left_click()
+                            time.sleep(1)
+                        
+                            # 'A'キーを押す
+                            send_key(Keycode.A)
+                            time.sleep(1)
+                        
+                            # 'Hello World'を入力
+                            type_hello_world()
+                        
+            </code>
+        </div>
+    
+        <script>
+            function copyCode() {
+                // ソースコードを取得
+                const code = document.getElementById("source-code").innerText;
+                // クリップボードにコピー
+                navigator.clipboard.writeText(code).then(() => {
+                    alert("コードをコピーしました！");
+                }).catch(err => {
+                    alert("コピーに失敗しました: " + err);
+                });
+            }
+        </script>
+    </body>
+    </html>
