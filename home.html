@@ -37,6 +37,24 @@
             padding: 0;
         }
 
+        /* ヘッダーのスタイル */
+        .header {
+            width: 100%;
+            background-color: #00ffff; /* 背景色 */
+            padding: 10px 0; /* 上下の余白 */
+            display: flex;
+            justify-content: center; /* 中央揃え */
+        }
+        .header a {
+            color: white; /* リンク文字色 */
+            text-decoration: none; /* 下線を消す */
+            margin: 0 15px; /* 各リンク間のスペース */
+            font-size: 18px; /* フォントサイズ */
+        }
+        .header a:hover {
+            color: #ff9800; /* ホバー時の文字色 */
+        }
+
         /* ノートPC用 (画面幅が1024px以下の場合) */
         @media (max-width: 1024px) {
             table {
@@ -54,6 +72,11 @@
             }
             img {
                 width: 100px; /* さらに画像サイズを縮小 */
+            }
+            
+            .header a {
+                font-size: 16px; /* スマホ用にフォントサイズを小さくする */
+                margin: 0 10px; /* 各リンク間のスペースを調整 */
             }
         }
     </style>
