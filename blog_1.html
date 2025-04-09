@@ -34,6 +34,60 @@
         <a href="softwares.html">softwares</a>
         <a href="hardware.html">このサイトについて</a>
     </div>
+        <style>
+        :root {
+            --background-color: #ffffff;
+            --text-color: #000000;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .switch-buttons {
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-right: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .dark-mode {
+            background-color: #333333;
+            color: #ffffff;
+        }
+
+        .light-mode {
+            background-color: #ffffff;
+            color: #000000;
+        }
+    </style>
+</head>
+<body>
+    <div class="switch-buttons">
+        <button onclick="switchTheme('dark')">ダークモード</button>
+        <button onclick="switchTheme('light')">ホワイトモード</button>
+    </div>
+    <script>
+        function switchTheme(theme) {
+            if (theme === 'dark') {
+                document.documentElement.style.setProperty('--background-color', '#222222');
+                document.documentElement.style.setProperty('--text-color', '#ffffff');
+            } else if (theme === 'light') {
+                document.documentElement.style.setProperty('--background-color', '#ffffff');
+                document.documentElement.style.setProperty('--text-color', '#000000');
+            }
+        }
+    </script>
     <h1>ラズパイピコをキーボード&マウスにしよう</h1>
     <p>
         簡単ラズパイピコ入門
