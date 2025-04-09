@@ -9,9 +9,31 @@
             max-width: 60%; /* 親要素の幅を超えないようにする */
             height: auto; /* 縦横比を維持して高さを自動調整 */
         }
+         /* ヘッダーのスタイル */
+        .header {
+            width: 100%;
+            background-color: #00ffff; /* 背景色 */
+            padding: 10px 0; /* 上下の余白 */
+            display: flex;
+            justify-content: center; /* 中央揃え */
+        }
+        .header a {
+            color: white; /* リンク文字色 */
+            text-decoration: none; /* 下線を消す */
+            margin: 0 15px; /* 各リンク間のスペース */
+            font-size: 18px; /* フォントサイズ */
+        }
+        .header a:hover {
+            color: #ff9800; /* ホバー時の文字色 */
+        }
     </style>
 </head>
 <body>
+        <div class="header">
+        <a href="home.html">HOME</a>
+        <a href="softwares.html">softwares</a>
+        <a href="hardware.html">このサイトについて</a>
+    </div>
     <h1>ラズパイピコをキーボード&マウスにしよう</h1>
     <p>
         簡単ラズパイピコ入門
