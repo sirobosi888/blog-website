@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>softwares</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* デフォルトスタイル (ビッグスクリーン用) */
+        table {
+            border-collapse: collapse;
+            width: 100%; /* ビッグスクリーンでは100% */
+            text-align: center;
+            margin: 10px 0;
+        }
+        td {
+            padding: 5px;
+            text-align: left;
+        }
+        img {
+            margin: 0;
+            display: block;
+            width: 200px; /* デフォルトの画像サイズ */
+            height: auto;
+        }
+        p {
+            margin: 2px 0 0;
+            font-size: 14px;
+        }
+        h1, h3 {
+            margin: 10px 0;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* ヘッダーのスタイル */
+        .header {
+            width: 100%;
+            background-color: #00ffff; /* 背景色 */
+            padding: 10px 0; /* 上下の余白 */
+            display: flex;
+            justify-content: center; /* 中央揃え */
+        }
+        .header a {
+            color: white; /* リンク文字色 */
+            text-decoration: none; /* 下線を消す */
+            margin: 0 15px; /* 各リンク間のスペース */
+            font-size: 30px; /* フォントサイズ */
+        }
+        .header a:hover {
+            color: #ff9800; /* ホバー時の文字色 */
+        }
+
+        /* ノートPC用 (画面幅が1024px以下の場合) */
+        @media (max-width: 1024px) {
+            table {
+                width: 80%; /* ノートPCでは80% */
+            }
+            img {
+                width: 150px; /* 画像サイズを縮小 */
+            }
+        }
+
+        /* スマホ用 (画面幅が768px以下の場合) */
+        @media (max-width: 768px) {
+            table {
+                width: 50%; /* スマホでは50% */
+            }
+            img {
+                width: 100px; /* さらに画像サイズを縮小 */
+            }
+            
+            .header a {
+                font-size: 16px; /* スマホ用にフォントサイズを小さくする */
+                margin: 0 10px; /* 各リンク間のスペースを調整 */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="home.html">HOME</a>
+        <a href="softwares.html">softwares</a>
+        <a href="hardware.html">このサイトについて</a>
+    </div>
+    <h1>softwares</h1>
+    <p>このページでは、僕が作ったsoftwareを公開しています。</p>
+    <h3>ソフトウェア一覧</h3>
+    <table border="1">
+        <tr>
+            <td>
+                <a href="https://github.com/sirobosi888/Simple-Notepad/blob/main/simple%20notepad%20japanese.exe">
+                    <button>ファイルをダウンロード</button>
+                    <img src="images/no.png" alt="画像がないです">
+                    <p>simplenotepad</p>
+                </a>
+            </td>
+            <td>
+                <a href="assets/example.pdf" download="example.pdf">
+                    <button>ファイルをダウンロード</button>
+                    <img src="images/no.png" alt="画像がないです">
+                    <p>ないようです</p>
+                </a>
+            </td>
+            <td>
+                <a href="blog_3.html">
+                    <img src="images/blog_3.png" alt="※">
+                    <p>まだ作成されていないようです</p>
+                </a>
+            </td>
+        </tr>
+    </table>
+</body>
+</html></html>
