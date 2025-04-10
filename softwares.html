@@ -91,6 +91,21 @@
     <h1>softwares</h1>
     <p>このページでは、僕が作ったsoftwareを公開しています。</p>
     <h3>ソフトウェア一覧</h3>
+        <div class="switch-buttons">
+        <button onclick="switchTheme('dark')">ダークモード</button>
+        <button onclick="switchTheme('light')">ホワイトモード</button>
+    </div>
+    <script>
+        function switchTheme(theme) {
+            if (theme === 'dark') {
+                document.documentElement.style.setProperty('--background-color', '#222222');
+                document.documentElement.style.setProperty('--text-color', '#ffffff');
+            } else if (theme === 'light') {
+                document.documentElement.style.setProperty('--background-color', '#ffffff');
+                document.documentElement.style.setProperty('--text-color', '#000000');
+            }
+        }
+    </script>
     <table border="1">
         <tr>
             <td>
