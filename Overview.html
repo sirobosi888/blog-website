@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href=".css">
+    <style>
+        /* デフォルトスタイル (ビッグスクリーン用) */
+        table {
+            border-collapse: collapse;
+            width: 100%; /* ビッグスクリーンでは100% */
+            text-align: center;
+            margin: 10px 0;
+        }
+        td {
+            padding: 5px;
+            text-align: left;
+        }
+        img {
+            margin: 0;
+            display: block;
+            width: 200px; /* デフォルトの画像サイズ */
+            height: auto;
+        }
+        p {
+            margin: 2px 0 0;
+            font-size: 14px;
+        }
+        h1, h3 {
+            margin: 10px 0;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin: 0;
+            padding: 0;
+        }
+        /* ヘッダーのスタイル */
+        .header {
+            width: 100%;
+            background-color: #00ffff; /* 背景色 */
+            padding: 10px 0; /* 上下の余白 */
+            display: flex;
+            justify-content: center; /* 中央揃え */
+        }
+        .header a {
+            color: white; /* リンク文字色 */
+            text-decoration: none; /* 下線を消す */
+            margin: 0 15px; /* 各リンク間のスペース */
+            font-size: 30px; /* フォントサイズ */
+        }
+        .header a:hover {
+            color: #ff9800; /* ホバー時の文字色 */
+        }
+        /* ノートPC用 (画面幅が1024px以下の場合) */
+        @media (max-width: 1024px) {
+            table {
+                width: 80%; /* ノートPCでは80% */
+            }
+            img {
+                width: 150px; /* 画像サイズを縮小 */
+            }
+        }
+
+        /* スマホ用 (画面幅が768px以下の場合) */
+        @media (max-width: 768px) {
+            table {
+                width: 50%; /* スマホでは50% */
+            }
+            img {
+                width: 100px; /* さらに画像サイズを縮小 */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="home.html">HOME</a>
+        <a href="softwares.html">softwares</a>
+        <a href="hardware.html">このサイトについて</a>
+    </div>
+    <h1>here888 website</h1>
+    <h3>welcome to my website</h3>
+    <p>
+        このサイトでは電子工作、プログラミングなどついての情報を発信しています。
+        まだまだ僕も初心者であるので初心者として失敗したことなどがあるからこそ
+        このようにしたらよいとわかると思います。
+        なので、初心者の方はぜひ参考にしてください。
+        無料のソフトウェアも公開していて誰でも無料でダウンロードすることができます。
+        ぜひ使ってみてください。(windows11のみ対応macは未対応)
+    </p>
