@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>ラズパイピコをキーボード&マウスにしよう</title>
+    <style>
+        img {
+            display: block;
+            max-width: 60%; /* 親要素の幅を超えないようにする */
+            height: auto; /* 縦横比を維持して高さを自動調整 */
+        }
+         /* ヘッダーのスタイル */
+        .header {
+            width: 100%;
+            background-color: #00ffff; /* 背景色 */
+            padding: 10px 0; /* 上下の余白 */
+            display: flex;
+            justify-content: center; /* 中央揃え */
+        }
+        .header a {
+            color: white; /* リンク文字色 */
+            text-decoration: none; /* 下線を消す */
+            margin: 0 15px; /* 各リンク間のスペース */
+            font-size: 30px; /* フォントサイズ */
+        }
+        .header a:hover {
+            color: #ff9800; /* ホバー時の文字色 */
+        }
+    </style>
+</head>
+<body>
+        <div class="header">
+        <a href="https://sirobosi888.github.io/blog-website/home.html">HOME</a>
+        <a href="https://sirobosi888.github.io/blog-website/softwares.html">softwares</a>
+        <a href="https://sirobosi888.github.io/blog-website/Overview.html">このサイトについて</a>
+    </div>
+        <style>
+        :root {
+            --background-color: #ffffff;
+            --text-color: #000000;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .switch-buttons {
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-right: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .dark-mode {
+            background-color: #333333;
+            color: #ffffff;
+        }
+
+        .light-mode {
+            background-color: #ffffff;
+            color: #000000;
+        }
+    </style>
+</head>
+<body>
+    <div class="switch-buttons">
+        <button onclick="switchTheme('dark')">ダークモード</button>
+        <button onclick="switchTheme('light')">ホワイトモード</button>
+    </div>
+    <script>
+        function switchTheme(theme) {
+            if (theme === 'dark') {
+                document.documentElement.style.setProperty('--background-color', '#222222');
+                document.documentElement.style.setProperty('--text-color', '#ffffff');
+            } else if (theme === 'light') {
+                document.documentElement.style.setProperty('--background-color', '#ffffff');
+                document.documentElement.style.setProperty('--text-color', '#000000');
+            }
+        }
+    </script>
+    <h1>Webサーバーの仕組みを知ろう</h1>
+    <p>
+        二回目はwebサーバーの仕組みについて解説します。
+
+        <br>
+        website、それはwebサーバーを使って作られていることは知っていると思いますが、実際にどのような仕組みで動いているのかは知らない人が多いと思います。
+        <br>
+        これから図を使って解説していきます。
+        <br>
+        <img src="images/b_2_1.png" alt="画像">
+        <br>
+        クライアントがwebページにアクセス要求を行います。するとサーバー側はその要求に応じて、webページのHTMLファイルを返します。そのように実行されているのです。
+        <br>
+        例えば、ログインの場合パスワードを入力し暗号化などを通してサーバーに送信します。サーバー側はそのパスワード
+        <br>
+        をデータベースに保存しているパスワードと照合し、正しければログイン成功、間違っていればログイン失敗と返します。
+        とても短い記事でしたが、webサーバーの仕組みについては理解できたでしょうか？
+        <br>
+        これからも頑張って更新していくのでどうぞよろしくお願いします
+    </body>
+    </html>
